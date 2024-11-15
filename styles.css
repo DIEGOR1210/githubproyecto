@@ -1,0 +1,371 @@
+/* Archivo: styles.css */
+
+/* Estilos generales */
+body {
+    font-family: 'Rockwell', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Encabezado */
+header {
+    background-color: #333;
+    padding: 1em;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 1em;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #ddd;
+}
+
+/* Contenido principal */
+main {
+    flex: 1;
+    padding: 2em;
+    text-align: center;
+}
+
+/* Pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+/* Clases específicas */
+.menu-principal {}
+.menu-comida {}
+.galeria {}
+.promociones {}
+
+/* Estilo para la página de Menú Comida */
+.menu-comida main {
+    background-color: #fff;
+    color: #000000;
+    padding: 2em;
+}
+
+/* Contenedor de columnas */
+.contenedor-columnas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5em;
+    margin-top: 2em;
+}
+
+/* Estilo para cada columna con textura */
+.columna {
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    padding: 1em;
+    background-image: url('imagenes/textura_negra.jpg'); /* Asegúrate de tener una imagen de textura */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centrar el texto dentro de cada columna */
+}
+
+/* Estilo de los encabezados de las columnas */
+.columna h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    color: #fff;
+}
+
+/* Estilo de la lista de elementos */
+.columna ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.columna ul li {
+    font-size: 1.1em;
+    padding: 1em 0;
+    border-bottom: 1px solid #444;
+    text-align: center;
+    position: relative;
+}
+
+/* Checkbox oculto */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Imagenes desplegables */
+.toggle-imagen {
+    display: block;
+    margin-top: 0.5em;
+}
+
+.toggle-imagen img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    transform: scale(0);
+    margin-top: 1em; /* Añade margen para separar del texto */
+    display: none; /* Oculta por defecto */
+}
+
+input[type="checkbox"]:checked + .toggle-imagen img {
+    opacity: 1;
+    transform: scale(1.5);
+    display: block; /* Hace visible la imagen expandida */
+}
+
+/* Ajuste para que los menús empujen el contenido hacia abajo */
+.submenu {
+    display: none;
+    padding-left: 1em;
+    margin-top: 0.5em;
+    color: #f1b2b2;
+}
+
+input[type="checkbox"]:checked + .toggle-menu + .submenu {
+    display: block;
+}
+
+/* Estilo del texto de indicación */
+.toggle-label {
+    display: block;
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 0.5em;
+    cursor: pointer;
+    text-decoration: underline;
+}
+/* Estilos para Promociones */
+.promociones main {
+    background-color: #f4f4f4;
+    color: #000000;
+    padding: 2em;
+}
+
+/* Contenedor de promociones */
+.contenedor-promociones {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    margin-top: 2em;
+}
+
+.promocion {
+    background-color: #0000008f;
+    color: white;
+    border-radius: 5px;
+    padding: 1em;
+    text-align: center;
+}
+
+.toggle-promocion {
+    font-size: 1.2em;
+    color: #ffffff;
+    cursor: pointer;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+/* Ocultar contenido de la promoción por defecto */
+.contenido-promocion {
+    display: none;
+    padding: 1em;
+    background-color: #3b3939;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 1em;
+}
+
+/* Checkbox oculto */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Mostrar contenido de la promoción cuando el checkbox está activado */
+input[type="checkbox"]:checked + .toggle-promocion + .contenido-promocion {
+    display: block;
+}
+
+/* Imagen en promociones */
+.contenido-promocion img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-top: 1em;
+    border-radius: 8px;
+}
+
+/* Estilos de color en la parte de Menú Principal */
+.menu-principal h1 {
+    color: #007bff; /* Cambia el color según tu preferencia */
+}
+/* Título principal */
+.titulo-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2em 0;
+    text-align: center;
+}
+
+.titulo-principal h1 {
+    font-size: 4em; /* Tamaño grande del texto */
+    margin-right: 1em; /* Separación entre el texto y la imagen */
+    color: #c71e1e;
+}
+
+.titulo-principal img.logo {
+    width: 120px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    border-radius: 50%; /* Opcional: dar forma redonda */
+}
+
+/* Recuadros */
+.recuadro {
+    background-color: #f4f4f4;
+    padding: 1.5em;
+    margin: 1em auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* Imagen grande con horario */
+.imagen-horario {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.imagen-horario img.imagen-grande {
+    width: 100%; /* Ocupa el ancho completo del contenedor */
+    max-width: 800px; /* Limita el tamaño máximo */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.imagen-horario p {
+    font-size: 1.2em;
+    margin-top: 1em;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+/* Contenedor de recuadros */
+.contenedor-recuadros {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+/* Recuadros */
+.recuadro {
+    background-color: #333;
+    color: white;
+    border-radius: 10px;
+    padding: 1em;
+    text-align: center;
+    width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.boton-recuadro {
+    color: orange;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 1em;
+    text-decoration: underline;
+    font-size: 0.9em;
+}
+
+/* Modal */
+.modal-checkbox {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-checkbox:checked ~ .modal {
+    display: flex;
+}
+
+.contenido-modal {
+    background: white;
+    padding: 1em;
+    border-radius: 8px;
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos se organicen en columnas */
+    gap: 1em; /* Añade espacio entre las imágenes */
+}
+
+.contenido-modal img {
+    max-width: 90%; /* Ajusta el ancho máximo de las imágenes */
+    height: auto;
+    margin: 0 auto; /* Centra las imágenes horizontalmente */
+    border-radius: 8px;
+    display: block; /* Asegura que cada imagen ocupe una línea */
+}
+
+.cerrar-modal {
+    display: block;
+    margin: 1em auto 0;
+    font-size: 1.2em;
+    color: white;
+    background: orange;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.cerrar-modal:hover {
+    background: #ff5722;
+}
